@@ -1,25 +1,28 @@
 # AEGIS DDI Dataset Collection
 
-This repository organizes original source datasets and separate validation reports for research and development.
+This repository contains original datasets and separate validation reports for research and development.
 
-## Dataset folders
+## Datasets
 
-- [DDInter](DDInter/) — seven original interaction CSV files and source attribution.
-- [ClinPGx](ClinPGx/) — original drugs, genes, and relationships ZIP archives, with source and license notes.
-- [RxNorm](RxNorm/) — original RxNorm Current Prescribable Content ZIP dated October 5, 2026.
+- [DDInter](DDInter/) — seven original drug-interaction CSV files and source attribution.
+- [ClinPGx](ClinPGx/) — original drugs, genes, and relationships ZIP archives.
+- [RxNorm](RxNorm/) — RxNorm Current Prescribable Content, October 5, 2026 release.
 - [ATC](ATC/) — community ATC/DDD snapshot dated April 25, 2026, including combination-product data.
-- [Validation report](validation/VALIDATION_REPORT.md) — archive integrity and basic structure checks.
-- [CYP450 coverage report](validation/CYP450_COVERAGE.md) — inspection of CYP-named gene and chemical relationships.
-- [Validation scripts](validation/) — reproducible checks.
 
-## Important limitations
+## Validation
 
-Archive integrity and basic structural checks do not constitute full clinical validation. The ClinPGx relationship data includes CYP-named Gene-Chemical associations, but this repository does not claim that every record identifies substrate, inhibitor, or inducer roles, or that all clinically relevant CYP450 relationships are covered.
+- [Dataset validation report](validation/VALIDATION_REPORT.md)
+- [CYP450 coverage report](validation/CYP450_COVERAGE.md)
+- [Validation scripts](validation/)
 
-The ATC files are a community snapshot, not the full official electronic release. They have not been reconciled against every entry in the official WHO ATC/DDD index.
+## Limitations
 
-Original source archives are preserved separately from generated reports. Missing records must not be interpreted as evidence of safety.
+Archive integrity and structural checks are not full clinical validation. The ClinPGx data contains CYP-named Gene–Chemical relationships, but complete substrate, inhibitor, and inducer classification has not been established.
+
+The ATC files are a community snapshot and have not been fully reconciled against the official WHO ATC/DDD index.
+
+Original source archives are kept separate from generated reports. Missing records must not be interpreted as evidence of safety.
 
 ## Attribution and licensing
 
-Each dataset folder contains a SOURCE.md with source and licensing notes where available. Review the original source terms before reuse or redistribution. No single license is asserted for all repository contents.
+Each dataset folder contains source and licensing notes where available. Review upstream terms before reuse or redistribution. No single license is asserted for every file in this repository.
