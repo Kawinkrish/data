@@ -85,13 +85,21 @@ try:
             report.append(f"- Relationship TSV: `{rel_name}`; {rel_rows} total rows.")
             report.append(f"- Rows mentioning CYP in entity names/types: {len(cyp_rows)}.")
             report.append(f"- Available columns: {', '.join(rel_header)}.")
-            drug_links = [
+            gene_chemical_links = [
                 r for r in cyp_rows
-                if "DRUG" in (str(r.get("Entity1_type","")) + str(r.get("Entity2_type",""))).upper()
+                if (
+                    ("CYP" in str(r.get("Entity1_name", "")).upper()
+                     and "GENE" in str(r.get("Entity1_type", "")).upper()
+                     and "CHEMICAL" in str(r.get("Entity2_type", "")).upper())
+                    or
+                    ("CYP" in str(r.get("Entity2_name", "")).upper()
+                     and "GENE" in str(r.get("Entity2_type", "")).upper()
+                     and "CHEMICAL" in str(r.get("Entity1_type", "")).upper())
+                )
             ]
-            report.append(f"- CYP-mentioned rows with a drug entity type: {len(drug_links)}.")
+            report.append(f"- CYP-named Gene-Chemical relationship rows: {len(gene_chemical_links)}.")
+            report.append("- ClinPGx records associations and evidence; it may not fully specify substrate, inhibitor, or inducer roles.")
             report.append("- This is a keyword-based coverage check, not a clinical completeness assessment.")
-            report.append("- Verify whether enzyme substrate/inhibitor/inducer roles and evidence fields meet the project schema.")
         else:
             report.append("- No TSV file found in relationships.zip; manual schema review required.")
 except Exception as e:

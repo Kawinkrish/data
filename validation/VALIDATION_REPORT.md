@@ -34,9 +34,9 @@ been fully reconciled against every entry in the official WHO ATC/DDD index.
 - Relationship TSV: `relationships.tsv`; 246714 total rows.
 - Rows mentioning CYP in entity names/types: 25342.
 - Available columns: Entity1_id, Entity1_name, Entity1_type, Entity2_id, Entity2_name, Entity2_type, Evidence, Association, PK, PD, PMIDs.
-- CYP-mentioned rows with a drug entity type: 0.
+- CYP-named Gene-Chemical relationship rows: 2938.
+- ClinPGx records associations and evidence; it may not fully specify substrate, inhibitor, or inducer roles.
 - This is a keyword-based coverage check, not a clinical completeness assessment.
-- Verify whether enzyme substrate/inhibitor/inducer roles and evidence fields meet the project schema.
 
 ## 5. RxNorm
 - Original RxNorm Full Prescribable Content archive is retained unchanged.
